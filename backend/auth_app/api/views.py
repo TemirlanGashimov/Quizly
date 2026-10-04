@@ -1,10 +1,13 @@
 from rest_framework import generics, status
-from rest_framework.permissions import AllowAny
+from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework.response import Response
 from django.contrib.auth import get_user_model
+from rest_framework_simplejwt.tokens import RefreshToken
 
 from .serializers import RegisterSerializer, LoginSerializer
+
+from .authentication import CookieJWTAuthentication
 
 User = get_user_model()
 
@@ -56,4 +59,17 @@ class LoginView(TokenObtainPairView):
 
         return response
 
+class LogoutView(generics.GenericAPIView):
+    authentication_classes = [CookieJWTAuthentication]
+    permission_classes = [IsAuthenticated]
+    
+    def post(self, request, *args, **kwargs):
+        refresh_token = request.COOKIES.get('refresh_token')
+        token = RefreshToken(refresh_token)
+        token.blacklist()
+        response = Response({"detail": "Log-Out successfully! All Tokens will be deleted. Refresh token is now invalid."}, status=status.HTTP_200_OK)
 
+        response.delete_cookie('access_token')
+        response.delete_cookie('refresh_token')
+
+        return response
