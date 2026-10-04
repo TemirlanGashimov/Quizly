@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'auth_app',
     'quizz_app',
+    'rest_framework_simplejwt',
 ]
 
 MIDDLEWARE = [
