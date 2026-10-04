@@ -1,5 +1,9 @@
 from rest_framework import serializers
 from django.contrib.auth.models import User
+from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
+from django.contrib.auth import get_user_model
+from rest_framework.exceptions import AuthenticationFailed
+
 
 class RegisterSerializer(serializers.ModelSerializer):
     confirmed_password = serializers.CharField(write_only=True)
@@ -34,3 +38,25 @@ class RegisterSerializer(serializers.ModelSerializer):
         account.set_password(pw)
         account.save()
         return account
+
+User = get_user_model()
+
+class LoginSerializer(TokenObtainPairSerializer):
+    username = serializers.CharField()
+    password = serializers.CharField(write_only=True)
+
+    def validate(self, attrs):
+        username = attrs.get('username')
+        password = attrs.get('password')
+
+        try:
+            user = User.objects.get(username=username)
+        except User.DoesNotExist:
+            raise AuthenticationFailed("Invalid username or password.")
+
+        if not user.check_password(password):
+            raise AuthenticationFailed("Invalid username or password.")
+
+        attrs['username'] = user.username
+        data = super().validate(attrs)
+        return data
