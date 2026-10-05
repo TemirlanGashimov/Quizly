@@ -1,0 +1,285 @@
+.main-library {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  width: 100%;
+  height: calc(100vh - 200px);
+  margin: 0 auto;
+  z-index: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.back-btn {
+  scale: 1;
+  transition: scale 0.3s ease;
+}
+.back-btn:hover {
+  scale: 1.1;
+}
+
+.background-objects {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background-position: bottom;
+  z-index: 0;
+}
+
+.background-dot1,
+.background-dot2,
+.background-wave {
+  z-index: 0;
+}
+
+.background-dot1 {
+  top: 50%;
+  left: 0;
+}
+
+.background-dot2 {
+  top: 50%;
+  right: 0;
+}
+
+.background-wave img {
+  position: absolute;
+  height: 100vh;
+  overflow: hidden;
+  width: 100%;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.headline {
+  font-family: "Gugi", sans-serif;
+  color: var(--text-color-green);
+}
+
+h1 {
+  font-size: var(--font-size-98);
+  margin: 0;
+}
+
+h3 {
+  font-size: var(--font-size-56);
+  margin: 0;
+}
+
+.input {
+  border: 3px solid var(--border-color-green);
+  border-radius: 48px;
+  width: 100%;
+  color: var(--text-color-bluelight);
+  font-size: var(--font-size-24);
+}
+
+.input::placeholder {
+  color: var(--text-color-bluelight);
+  font-size: var(--font-size-24);
+}
+
+.input-container {
+  background: none;
+  width: 40%;
+  position: relative;
+}
+
+.btn {
+  width: 200px;
+  background: var(--bg-color-green);
+  color: var(--text-color-blue);
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: var(--bg-color-green);
+}
+
+.wrapping-container {
+  padding: 40px;
+  box-sizing: border-box;
+  z-index: 1;
+  position: relative;
+  align-items: flex-start;
+  width: 90vw;
+  max-width: 1440px;
+}
+
+#quiz-container-library {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 24px;
+  padding: 16px 0;
+}
+
+.quiz-title {
+  color: var(--text-color-green);
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+
+.quiz-card {
+  color: var(--text-color-green);
+  border-radius: 18px;
+  background: rgba(63, 255, 104, 0.2);
+  padding: 16px;
+  cursor: pointer;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 10;
+}
+
+.overlay img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  object-fit: cover;
+  pointer-events: none;
+  z-index: 11;
+}
+
+@media (max-width: 1300px) {
+  h1 {
+    font-size: var(--font-size-48);
+  }
+
+  h3 {
+    font-size: var(--font-size-32);
+  }
+}
+
+@media (max-width: 1200px) {
+  #quiz-container-library {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    padding: 0 5px 0 5px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 700px) {
+  .header {
+    position: fixed;
+    z-index: 6;
+    backdrop-filter: blur(8px);
+  }
+
+  .input {
+    width: 220px;
+  }
+
+  h1 {
+    font-size: var(--font-size-36);
+  }
+
+  h3 {
+    font-size: var(--font-size-24);
+  }
+}
+
+.overlay img {
+  width: 400px;
+  height: 400px;
+}
+
+@media (max-width: 375px) {
+  h1 {
+    font-size: var(--font-size-32);
+  }
+
+  h3 {
+    font-size: var(--font-size-20);
+  }
+
+  .input {
+    font-size: var(--font-size-16);
+    padding: 8px 12px;
+    height: 42px;
+  }
+
+  .btn {
+    width: 100%;
+    font-size: var(--font-size-20);
+    padding: 12px;
+    margin-top: 24px;
+  }
+
+  .headline-green {
+    font-size: var(--font-size-28);
+    text-align: center;
+  }
+
+  .quiz-card {
+    padding: 12px;
+    font-size: var(--font-size-16);
+  }
+
+  .overlay img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .footer a {
+    padding: 0;
+    text-align: center;
+  }
+
+  .header-icon {
+    width: 140px;
+  }
+
+  .header-icon img {
+    width: 60px;
+    height: 20px;
+  }
+
+  .header-icon::after {
+    font-size: var(--font-size-16);
+  }
+}
+
+@media (max-width: 320px) {
+  h1 {
+    font-size: 28px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  .btn {
+    font-size: var(--font-size-18);
+    cursor: pointer;
+  }
+
+  .quiz-card {
+    font-size: var(--font-size-14);
+    padding: 4px;
+  }
+
+  .overlay img {
+    width: 160px;
+    height: 160px;
+  }
+}

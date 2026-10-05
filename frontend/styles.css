@@ -1,0 +1,158 @@
+.circle-animation {
+  animation: circle-animation 4s linear forwards;
+  transform-origin: center;
+}
+
+.index-main {
+  gap: 200px;
+}
+
+.animation-container {
+  width: 100%;
+  height: 100%;
+}
+
+.animation-container img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes circle-animation {
+  0% {
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  90% {
+    transform: translate(-50%, -50%) scale(1.5) rotate(180deg);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.robot_default {
+  transform-origin: center;
+  animation: robot-fading-in 3s linear forwards;
+  object-fit: contain;
+}
+
+@keyframes robot-fading-in {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.wave {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+#bubble-text {
+  top: 20px;
+  left: 20px;
+  color: var(--text-color-bluelight);
+  font-size: var(--font-size-28);
+}
+
+.fading-in {
+  animation: fading-in 1s linear forwards;
+}
+
+@keyframes fading-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1500px) {
+  #quiz-container img {
+    width: 350px;
+    height: 250px;
+  }
+
+  #robot {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+@media (max-width: 1150px) {
+  #quiz-container {
+    width: 250px;
+    height: 150px;
+    font-size: var(--font-size-18);
+  }
+
+  .circle-animation {
+    overflow-x: hidden;
+  }
+
+  @keyframes circle-animation {
+    0% {
+      transform: translate(-50%, -50%) scale(0.4) rotate(0deg);
+      opacity: 1;
+    }
+    90% {
+      transform: translate(-50%, -50%) scale(0.8) rotate(180deg);
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      display: none;
+    }
+  }
+}
+
+@media (max-height: 1000px) {
+  .login-container {
+    margin-bottom: 20px;
+    gap: 8px;
+  }
+
+  #sign-up,
+  #login {
+    margin: 0;
+    width: 120px;
+  }
+
+  @keyframes circle-animation {
+    0% {
+      transform: translate(-50%, -50%) scale(0.3) rotate(0deg);
+      opacity: 1;
+    }
+    90% {
+      transform: translate(-50%, -50%) scale(0.6) rotate(180deg);
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  #quiz-container {
+    font-size: var(--font-size-16);
+  }
+
+  #quiz-container img {
+    transform: scaleX(-1);
+    width: 250px;
+    height: 250px;
+  }
+}

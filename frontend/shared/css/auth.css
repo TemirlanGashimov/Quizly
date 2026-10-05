@@ -1,0 +1,205 @@
+header {
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+}
+
+main {
+  height: calc(100vh - 100px);
+}
+
+.auth-input-container {
+  background: radial-gradient(
+    127.05% 192.18% at 127.05% -73.66%,
+    rgba(63, 255, 104, 0.2) 31.83%,
+    rgba(14, 43, 150, 0.2) 68.09%,
+    rgba(42, 49, 137, 0.2) 81.38%
+  );
+  padding: 40px 56px 40px 56px;
+  border-radius: var(--border-radius-40);
+}
+
+.btn {
+  background-color: var(--bg-color-green);
+  color: var(--text-color-blue);
+  cursor: pointer;
+}
+
+.btn.login:hover,
+.btn.signin:hover {
+  box-shadow: 1px 1px 10px 0px rgba(63, 255, 104, 1);
+  background-color: var(--bg-color-green);
+}
+
+#login-ref {
+  text-decoration: underline;
+  color: var(--text-color-green);
+}
+
+.wave-login,
+.wave-signin {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.error-message {
+  position: absolute;
+  bottom: -20px;
+  left: 0px;
+  color: red;
+  font-size: 16px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  font-family: "K2D", sans-serif;
+}
+
+.error-message.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.checkbox-wrapper {
+  position: relative;
+}
+
+.checkbox-wrapper label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 16px;
+  font-family: "Kantumruy Pro", sans-serif;
+  color: var(--text-color-bluelight);
+  text-align: center;
+}
+
+.checkbox-wrapper input[type="checkbox"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--text-color-bluelight);
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  transition:
+    border-color 0.3s ease,
+    background-color 0.3s ease;
+  background-color: transparent;
+}
+
+.checkbox-wrapper input[type="checkbox"]:checked {
+  background-color: transparent;
+  border-color: var(--text-color-bluelight);
+}
+
+.checkbox-wrapper input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 5px;
+  width: 4px;
+  height: 9px;
+  border: solid var(--text-color-bluelight);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.checkbox-wrapper input[type="checkbox"]:hover {
+  border-color: rgba(157, 245, 255, 0.8);
+}
+
+.eye-icon {
+  z-index: 10;
+}
+
+@media (max-width: 600px) {
+  .auth-input-container {
+    width: 320px;
+    padding: 40px 0 40px 0;
+  }
+
+  .error-message {
+    font-size: 14px;
+    left: 0px;
+  }
+
+  .p-container {
+    padding: 10px;
+  }
+
+  .input-wrapper {
+    width: 300px;
+  }
+
+  .input {
+    width: 220px;
+  }
+
+  .logos-login img:nth-last-child(1) {
+    width: 130px;
+    height: 30px;
+  }
+
+  .logos-login img:first-child {
+    width: 50px;
+    height: 50px;
+  }
+
+  .logos-signin img:nth-last-child(1) {
+    width: 130px;
+    height: 30px;
+  }
+
+  .logos-signin img:first-child {
+    width: 50px;
+    height: 50px;
+  }
+
+  .logos-login {
+    gap: 4px;
+  }
+
+  .bottom-line {
+    padding-top: 14px;
+  }
+
+  .header img {
+    padding-top: 0;
+  }
+
+  .btn {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 400px) {
+  .error-message {
+    font-size: 14px;
+    left: -5px;
+  }
+
+  .auth-input-container.second {
+    width: 300px;
+    overflow-y: unset;
+  }
+
+  p {
+    font-size: 16px !important;
+    text-align: center !important;
+  }
+
+  .auth-input-container {
+    width: 320px;
+    padding: 20px 0 20px 0;
+  }
+}

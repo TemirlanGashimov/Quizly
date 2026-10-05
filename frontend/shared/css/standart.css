@@ -1,0 +1,367 @@
+body {
+  margin: 0;
+  box-sizing: border-box;
+  background:
+    radial-gradient(
+      circle at 93% 38%,
+      rgba(63, 255, 104, 0.15) 8%,
+      rgba(10, 12, 44, 0.8) 40%
+    ),
+    radial-gradient(
+      circle at 10% 73%,
+      rgba(63, 255, 104, 0.65) 8%,
+      rgba(7, 9, 35, 0.8) 50%
+    ),
+    linear-gradient(0deg, #070923, #070923);
+  background-attachment: fixed;
+  position: relative;
+  font-family: "Kantumruy Pro", sans-serif;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  box-shadow: 0 0 0 1000px rgba(63, 255, 104, 0.2) inset !important;
+  -webkit-text-fill-color: var(--text-color-green) !important;
+  transition: background-color 9999s ease-in-out 0s !important;
+}
+
+.no-cu-po {
+  cursor: default !important;
+  pointer-events: none !important;
+}
+
+@media (pointer: coarse) {
+  .header-icon:hover,
+  .header-icon:hover::after,
+  .header-icon:hover::before {
+    filter: none !important;
+    content: none !important;
+    background: none !important;
+    pointer-events: auto;
+  }
+}
+
+.of_hidden {
+  overflow: hidden;
+}
+
+.of_auto {
+  overflow: auto;
+  max-height: 100%;
+}
+
+.z_5 {
+  z-index: 5;
+}
+
+.d_none {
+  display: none !important;
+}
+
+.pos_rel {
+  position: relative;
+}
+
+.pos_abs {
+  position: absolute;
+}
+
+.flex_dir_row {
+  flex-direction: row;
+}
+
+.d_flex_cc_ac {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.d_flex_sb_ac {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.d_flex_cc_as {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+
+.d_flex_cs_as {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+}
+
+.font_col_lightblue_K2D_20 {
+  color: var(--text-color-bluelight);
+  font-family: "K2D", sans-serif;
+  font-size: var(--font-size-20);
+}
+
+.h_full {
+  height: 100%;
+}
+
+.w_full {
+  width: 100%;
+}
+
+.h_vh100 {
+  height: 100vh;
+}
+
+.gap_24 {
+  gap: 24px;
+}
+
+.gap_40 {
+  gap: 40px;
+}
+
+.marg_0 {
+  margin: 0;
+}
+
+.gap_32 {
+  gap: 32px;
+}
+
+.gap_48 {
+  gap: 48px;
+}
+
+.text_c {
+  text-align: center;
+}
+
+.text_r {
+  text-align: right;
+}
+
+.flex_dir_col {
+  flex-direction: column;
+}
+
+.cu_po {
+  cursor: pointer;
+}
+
+.pad_bot_48 {
+  padding-bottom: 48px;
+}
+
+.border_1_solid {
+  border: 1px solid;
+}
+
+.btn {
+  border-color: var(--border-color-green);
+  border-radius: var(--border-radius-20);
+  color: var(--text-color-green);
+  background-color: var(--bg-color-blue);
+  width: 150px;
+  height: 50px;
+  font-size: var(--font-size-24);
+  font-family: "K2D", sans-serif;
+  text-decoration: none;
+  margin-top: 48px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  box-shadow: 1px 1px 10px 0px rgba(63, 255, 104, 1);
+  background-color: var(--bg-color-green-hover);
+}
+
+#sign-up a {
+  color: var(--text-color-green);
+  text-decoration: none;
+}
+
+#login {
+  background-color: var(--bg-color-green);
+}
+
+#login a {
+  text-decoration: none;
+}
+
+#login a:visited {
+  text-decoration: none;
+  color: var(--text-color-blue);
+}
+
+.p20 {
+  padding: 20px;
+}
+
+.p48 {
+  padding: 48px;
+}
+
+.pt48 {
+  padding-top: 48px;
+}
+
+.input {
+  border-radius: var(--border-radius-20);
+  border: none;
+  padding: 15px;
+  font-size: var(--font-size-16);
+  font-family: "Kantumruy Pro", sans-serif;
+  width: clamp(200px, 360px, 360px);
+  height: 46px;
+  background: rgba(63, 255, 104, 0.2);
+  color: var(--text-color-green);
+}
+
+input::placeholder {
+  color: var(--text-color-green);
+  font-family: "Kantumruy Pro", sans-serif;
+  font-size: var(--font-size-16);
+}
+
+.input-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.input-wrapper > img {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.input-wrapper > .pen,
+.input-wrapper > .hook {
+  width: 24px;
+  height: 24px;
+}
+
+.input-wrapper > input {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.input-wrapper > img:not(.eye-icon):not(.pen):not(.hook) {
+  left: 20px;
+}
+
+.input-wrapper > .eye-icon,
+.input-wrapper > .hook,
+.input-wrapper > .pen {
+  right: 20px;
+}
+
+.header-icon {
+  position: relative;
+  width: 200px;
+  height: 100px;
+  overflow: hidden;
+}
+
+.header-icon img {
+  position: absolute;
+  width: 80px;
+  height: 24px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.5s ease;
+}
+
+.header-icon::after {
+  content: "Log Out";
+  position: absolute;
+  font-family: "K2D", sans-serif;
+  top: 50%;
+  left: 50%;
+  transform: translate(-150%, -50%);
+  color: var(--text-color-green);
+  font-size: 20px;
+  opacity: 0;
+  transition:
+    transform 0.5s ease,
+    opacity 0.5s ease;
+  cursor: pointer;
+}
+
+.header-icon:hover img {
+  transform: translate(-120%, -50%);
+  filter: drop-shadow(1px 1px 2px rgba(8, 184, 46, 1));
+}
+
+.header-icon:hover::after {
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  filter: drop-shadow(1px 1px 2px rgba(8, 184, 46, 1));
+}
+
+.headline-green {
+  color: var(--text-color-green);
+  font-size: var(--font-size-36);
+  font-family: "K2D", sans-serif;
+}
+
+h1 {
+  font-size: var(--font-size-24);
+  font-family: "K2D", sans-serif;
+  color: var(--text-color-green);
+}
+
+h2 {
+  font-size: var(--font-size-20);
+  color: var(--text-color-whiteblue);
+}
+
+h4 {
+  font-size: var(--font-size-16);
+  color: var(--text-color-bluelight);
+}
+
+ul {
+  list-style-position: inside;
+  margin: 0;
+  padding: 0;
+}
+
+ul > li {
+  color: var(--text-color-whiteblue);
+  font-size: var(--font-size-16);
+  list-style: none;
+}
+
+.footer {
+  gap: 32px;
+  position: static;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+
+.footer a {
+  color: var(--text-color-bluelight);
+  font-family: "Kantumruy Pro", sans-serif;
+  text-decoration: none;
+}
+
+a:visited {
+  color: var(--text-color-bluelight);
+}
+
+#header {
+  height: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.header {
+  max-width: 1440px;
+}

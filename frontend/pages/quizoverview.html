@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quizly - Quiz</title>
+    <link rel="stylesheet" href="/shared/css/variables.css" />
+    <link rel="stylesheet" href="/shared/css/standart.css" />
+    <link rel="stylesheet" href="/shared/css/quizoverview.css" />
+    <link rel="stylesheet" href="../shared/css/toastmsg.css" />
+
+    <script src="/shared/js/helper.js"></script>
+    <script src="../shared/js/config.js"></script>
+    <script src="../shared/js/auth.js" defer></script>
+    <script src="/shared/js/api.js" defer></script>
+    <script src="/shared/js/header.js"></script>
+    <script src="/shared/js/template.js"></script>
+    <script src="/shared/js/quizoverview.js" defer></script>
+    <link
+      rel="icon"
+      href="/assets/icons/robot_default.png"
+      type="image/x-icon"
+    />
+  </head>
+  <body onload="initHeader(); init()">
+    <header>
+      <div id="header" class="z_5"></div>
+    </header>
+    <main class="d_flex_cc_ac">
+      <div class="overview d_flex_cc_ac">
+        <section class="container-left-split">
+          <h2>Your previous quizes</h2>
+          <h4>Today</h4>
+          <ul id="today-quizzes"></ul>
+          <h4>The last 7 days</h4>
+          <ul id="last-quizzes-7days"></ul>
+          <button class="btn" onclick="seeAll()">See all</button>
+        </section>
+
+        <div class="spacer"></div>
+
+        <section class="container-right-split">
+          <h1>Here´s how i transformed your video into interactive quiz.</h1>
+          <h2>Headline</h2>
+          <div class="description-container d_flex_cs_as flex_dir_row">
+            <div>
+              <div class="input-wrapper">
+                <img
+                  src="/assets/icons/input_pen_blue.png"
+                  class="pen"
+                  alt="image of a pen"
+                  id="pen"
+                />
+                <input class="input" type="text" id="headline" />
+              </div>
+              <h2>Description</h2>
+              <div class="input-wrapper wrapable">
+                <img
+                  src="/assets/icons/input_pen_blue.png"
+                  class="hook"
+                  alt="a pen"
+                  id="hook"
+                />
+                <textarea id="description" rows="10"></textarea>
+                <button class="btn btn-quiz" onclick="goToQuiz()">
+                  Go to quiz
+                </button>
+              </div>
+            </div>
+            <iframe
+              id="iFrame-video"
+              src=""
+              title="YouTube video"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer class="footer cu_po z-6 pos_abs">
+      <a href="./legalnotice.html">Legal notice</a>
+      <a href="./privacy.html">Privacy policy</a>
+    </footer>
+  </body>
+</html>

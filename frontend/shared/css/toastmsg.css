@@ -1,0 +1,122 @@
+.toast_msg {
+  position: fixed;
+  bottom: 50px;
+  left: 50px;
+  min-height: 80px;
+  box-shadow: 0px 0px 16px 0px #0000003d;
+  min-width: 300px;
+  border-radius: 8px;
+  overflow: hidden;
+  transform: translateX(-100%);
+  animation: slideInFromLeft 0.25s ease-out forwards;
+  z-index: 99;
+  font-family: "K2D", sans-serif;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.toast_msg_right h3 {
+  font-size: var(--font-size-24);
+}
+
+.toast_msg_left {
+  width: 80px;
+  align-self: stretch;
+}
+
+@media screen and (max-width: 500px) {
+  .toast_msg_left {
+    width: 30px;
+    padding-left: 16px;
+  }
+
+  .toast_msg {
+    min-width: 0px;
+    margin-right: 16px;
+  }
+}
+
+.toast_msg[error="true"] .toast_msg_left {
+  background: #de3c3f;
+}
+
+.toast_msg[error="false"] .toast_msg_left {
+  background: var(--bg-color-green);
+}
+
+.toast_msg[error="true"] {
+  background: radial-gradient(
+    127.05% 192.18% at 127.05% -73.66%,
+    rgba(63, 255, 104, 1) 31.83%,
+    rgba(14, 43, 70, 1) 68.09%,
+    rgba(42, 49, 70, 1) 81.38%
+  );
+}
+
+.toast_msg[error="false"] {
+  background: radial-gradient(
+    127.05% 192.18% at 127.05% -73.66%,
+    rgba(63, 255, 104, 1) 31.83%,
+    rgba(14, 43, 70, 1) 68.09%,
+    rgba(42, 49, 70, 1) 81.38%
+  );
+}
+
+.toast_msg[hint="true"] {
+  background: #ffc107;
+}
+
+.toast_msg[error="true"] img[error="false"] {
+  display: none;
+}
+
+.toast_msg[error="false"] img[error="true"] {
+  display: none;
+}
+
+.toast_msg[error="true"] h3[error="false"] {
+  display: none;
+}
+
+.toast_msg[error="false"] h3[error="true"] {
+  display: none;
+}
+
+.toast_msg_right {
+  position: relative;
+  flex: 1;
+  padding: 8px 20px;
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
+  color: whitesmoke;
+}
+
+.toast_msg_right ul {
+  flex: 1;
+  padding: 0px 16px;
+}
+
+.toast_msg_hint {
+  position: relative;
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
+  background: radial-gradient(
+    127.05% 192.18% at 127.05% -73.66%,
+    rgba(63, 255, 104, 0.2) 31.83%,
+    rgba(14, 43, 150, 0.2) 68.09%,
+    rgba(42, 49, 137, 0.2) 81.38%
+  );
+}

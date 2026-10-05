@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quizly-Library</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="../shared/css/variables.css" />
+    <link rel="stylesheet" href="../shared/css/standart.css" />
+    <link rel="stylesheet" href="../shared/css/auth.css" />
+    <link rel="stylesheet" href="../shared/css/toastmsg.css" />
+    <link rel="stylesheet" href="../shared/css/fonts.css" />
+    <link rel="stylesheet" href="../shared/css/library.css" />
+    <link
+      rel="icon"
+      href="../assets/icons/robot_default.png"
+      type="image/x-icon"
+    />
+    <script src="../shared/js/helper.js"></script>
+    <script src="../shared/js/config.js"></script>
+    <script src="../shared/js/auth.js" defer></script>
+    <script src="../shared/js/api.js" defer></script>
+    <script src="../shared/js/template.js"></script>
+    <script src="../shared/js/library.js" defer></script>
+  </head>
+  <body onload="init()" class="pos_rel">
+    <section>
+      <div class="background-wave">
+        <img src="/assets/icons/wave.png" alt="" />
+      </div>
+      <div class="overlay d_none">
+        <img src="/assets/img/loadingspinner.gif" alt="" />
+      </div>
+    </section>
+    <header>
+      <div id="header" class="z_5"></div>
+    </header>
+
+    <main class="main-library">
+      <article class="d_flex_cc_ac flex_dir_col input-container pos_rel z_5">
+        <section class="d_flex_cc_ac flex_dir_col">
+          <div class="w_full d_flex_cc_ac pad_bot_48 headline flex_dir_col">
+            <h1>AI-Powered</h1>
+            <h3>Quiz Generator</h3>
+          </div>
+          <div class="w_full pad_bot_48">
+            <input
+              type="url"
+              id="url"
+              class="input"
+              placeholder="Youtube url"
+            />
+          </div>
+          <button id="start-quiz" class="btn">Generate Quiz</button>
+        </section>
+        <section
+          id="wrapping-container"
+          class="wrapping-container flex_dir_col"
+        >
+          <div class="headline-green">Last quizes</div>
+          <div id="quiz-container-library"></div>
+        </section>
+      </article>
+
+      <section class="background-objects pos_abs">
+        <div class="background-dot1 pos_abs">
+          <img src="/assets/icons/dot1.svg" alt="dots for the background" />
+        </div>
+        <div class="background-dot2 pos_abs">
+          <img src="/assets/icons/dot2.svg" alt="dots for the background" />
+        </div>
+      </section>
+    </main>
+    <section class="overlay d_none">
+      <img src="/assets/img/loadingspinner.gif" alt="a loading spinner" />
+    </section>
+
+    <footer class="footer z-6 pos_abs">
+      <a href="./legalnotice.html" class="cu_po">Legal notice</a>
+      <a href="./privacy.html" class="cu_po">Privacy policy</a>
+    </footer>
+  </body>
+</html>

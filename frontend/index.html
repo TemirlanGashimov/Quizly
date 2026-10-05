@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quizly</title>
+    <link rel="stylesheet" href="shared/css/variables.css" />
+    <link rel="stylesheet" href="shared/css/standart.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="shared/js/template.js"></script>
+    <script src="script.js" defer></script>
+    <link
+      rel="icon"
+      href="assets/icons/robot_default.png"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <main>
+      <article
+        class="index-main d_flex_cc_ac w_full flex_dir_col h_vh100 pos_rel w_full"
+      >
+        <section class="w_full d_flex_cc_ac">
+          <div id="quiz-container" class="pos_rel">
+            <img src="assets/icons/group2.png" alt="a speech bubble" />
+            <div id="bubble-text" class="pos_abs z_5"></div>
+          </div>
+        </section>
+
+        <section>
+          <div class="animation-container pos_rel">
+            <img
+              src="assets/icons/Ellipse23.png"
+              alt="spinning-circle"
+              class="circle-animation pos_abs"
+            />
+            <img
+              src="assets/icons/Ellipse27.png"
+              alt="spinning-circle"
+              class="circle-animation pos_abs"
+            />
+            <img
+              src="assets/icons/Ellipse25.png"
+              alt="spinning-circle"
+              class="circle-animation pos_abs"
+            />
+            <img
+              src="assets/icons/Ellipse22.png"
+              alt="spinning-circle"
+              class="circle-animation pos_abs"
+            />
+            <img
+              src="assets/icons/robot_default.png"
+              alt="a robot"
+              id="robot"
+              class="robot_default pos_abs z_5"
+            />
+          </div>
+        </section>
+        <img
+          src="assets/icons/wave.png"
+          alt="a robot"
+          class="wave pos_abs"
+          id="wave"
+        />
+
+        <section>
+          <div class="login-container d_flex_cc_ac gap_24">
+            <button
+              id="sign-up"
+              class="btn cu_po d_flex_cc_ac border_1_solid z_5"
+            >
+              <a
+                href="pages/registration.html"
+                class="w_full h_full d_flex_cc_ac"
+                >Sign up</a
+              >
+            </button>
+            <button
+              id="login"
+              class="btn cu_po d_flex_cc_ac border_1_solid z_5"
+            >
+              <a href="pages/login.html" class="w_full h_full d_flex_cc_ac"
+                >Login</a
+              >
+            </button>
+          </div>
+        </section>
+      </article>
+    </main>
+  </body>
+</html>

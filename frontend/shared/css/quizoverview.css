@@ -1,0 +1,176 @@
+/* Specific styles for quiz overview page */
+.overview {
+  height: 80%;
+  padding: 0 20px 0 20px;
+}
+
+main {
+  height: calc(100vh - 200px);
+}
+
+.spacer {
+  height: 100%;
+  background-color: var(--bg-color-green);
+  width: 4px;
+  margin: 0 48px 0 48px;
+}
+
+#headline {
+  color: var(--text-color-whiteblue);
+  font-size: var(--font-size-18);
+}
+
+.btn-quiz {
+  background-color: var(--bg-color-green);
+  color: var(--text-color-blue);
+  cursor: pointer;
+}
+
+.btn.btn-quiz:hover {
+  box-shadow: 1px 1px 10px 0px rgba(63, 255, 104, 1);
+  background-color: var(--bg-color-green);
+  cursor: pointer;
+}
+
+textarea {
+  width: 100%;
+  resize: none;
+  min-height: 80px;
+  padding: 15px 60px 15px 15px;
+  font-size: var(--font-size-18);
+  font-family: "Kantumruy Pro", sans-serif;
+  border-radius: var(--border-radius-20);
+  border: 1px solid var(--border-color-green);
+  background: rgba(63, 255, 104, 0.2);
+  color: var(--text-color-whiteblue);
+  box-sizing: border-box;
+}
+
+.input-wrapper.wrapable {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 100%;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.input-wrapper.wrapable > img {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  margin-top: 6px;
+  top: 16px;
+  transform: none;
+}
+
+#iFrame-video {
+  width: 450px;
+  height: 250px;
+  margin-left: 48px;
+  border-radius: 18px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container-left-split {
+  width: 20%;
+}
+
+#last-quizzes-7days li {
+  padding-bottom: 8px;
+}
+
+.container-right-split {
+  width: 80%;
+}
+
+li {
+  list-style: none;
+  cursor: pointer;
+}
+
+li:hover {
+  color: var(--text-color-green);
+}
+
+@media (max-width: 1200px) {
+  main {
+    height: auto !important;
+    padding: 40px 20px;
+  }
+
+  .overview {
+    flex-direction: column-reverse;
+    align-items: center;
+    width: 100%;
+    margin-top: 40px;
+  }
+
+  .input-wrapper.wrapable {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container-left-split,
+  .container-right-split {
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+  }
+
+  #iFrame-video {
+    width: 100%;
+    height: auto;
+    max-height: 250px;
+  }
+
+  .spacer {
+    display: none;
+  }
+
+  .description-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .footer {
+    position: relative;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .footer a {
+    margin: 0;
+    padding: 0;
+  }
+
+  .container-right-split,
+  .container-left-split {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .input-wrapper {
+    width: 100%;
+  }
+
+  .input-wrapper input {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 60px;
+    box-sizing: border-box;
+  }
+
+  #iFrame-video {
+    margin: 0;
+    width: 300px;
+  }
+}

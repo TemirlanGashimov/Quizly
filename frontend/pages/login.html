@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quizly - Login</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="../shared/css/variables.css" />
+    <link rel="stylesheet" href="../shared/css/standart.css" />
+    <link rel="stylesheet" href="../shared/css/toastmsg.css" />
+    <link rel="stylesheet" href="../shared/css/fonts.css" />
+    <link rel="stylesheet" href="../shared/css/auth.css" />
+    <link
+      rel="icon"
+      href="../assets/icons/robot_default.png"
+      type="image/x-icon"
+    />
+    <script src="../shared/js/config.js"></script>
+    <script src="../shared/js/helper.js"></script>
+    <script src="../shared/js/template.js"></script>
+    <script src="../shared/js/header.js"></script>
+    <script src="../shared/js/auth.js" defer></script>
+  </head>
+  <body onload="initHeader()" class="pos_rel">
+    <header>
+      <div id="header" class="z_5"></div>
+    </header>
+    <main class="d_flex_cc_ac w_full">
+      <article class="auth-input-container z_5">
+        <div>
+          <div class="logos-login d_flex_cc_ac gap_32 flex_dir_col p">
+            <img
+              src="/assets/icons/robotfacelogin.png"
+              alt="a picture of a robot"
+            />
+            <img src="/assets/icons/loginsign.png" alt="a picture of login" />
+          </div>
+          <div
+            class="p-container d_flex_cc_ac font_col_lightblue_K2D_20 flex_dir_col text_c p48"
+          >
+            <p class="marg_0">Unlock the Ai power and dive in</p>
+            <p class="marg_0">to the quiz!</p>
+          </div>
+        </div>
+        <form
+          onsubmit="loginUser(event); return false"
+          class="d_flex_cc_ac flex_dir_col gap_24"
+        >
+          <div class="d_flex_cc_ac flex_dir_col gap_24">
+            <div class="input-wrapper">
+              <img src="/assets/icons/inputuser.png" alt="" />
+              <input
+                class="input"
+                type="text"
+                id="input-username"
+                name="username"
+                placeholder="Username"
+              />
+              <div class="error-message"></div>
+            </div>
+
+            <div class="input-wrapper">
+              <img src="/assets/icons/inputlock.png" alt="" />
+              <img
+                src="/assets/icons/visibility_off.svg"
+                class="eye-icon"
+                id="input-lock-password"
+                alt="picture of a closed eye"
+              />
+              <input
+                class="input"
+                type="password"
+                id="input-password"
+                name="password"
+                placeholder="Password"
+              />
+              <div class="error-message"></div>
+            </div>
+          </div>
+          <button
+            type="submit"
+            class="btn login cu_po d_flex_cc_ac border_1_solid z_5"
+          >
+            <a href="./library.html"></a>Log in
+          </button>
+        </form>
+        <div class="pt48 bottom-line">
+          <p class="font_col_lightblue_K2D_20 text_c">
+            Don't have an account?
+            <a id="login-ref" href="registration.html">Sign up</a>
+          </p>
+        </div>
+      </article>
+      <img
+        src="/assets/icons/wavelogin.png"
+        alt="a background wave image"
+        class="wave-login"
+      />
+    </main>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+:root {
+  --bg-color-blue: rgba(3, 11, 42, 1);
+  --bg-color-green: rgba(63, 255, 104, 1);
+  --bg-color-grassgreen: rgba(63, 255, 104, 0.65);
+  --bg-color-lightblue: rgba(157, 245, 255, 1);
+  --bg-color-gradient:
+    radial-gradient(
+      circle at 93% 38%,
+      rgba(63, 255, 104, 0.15) 8%,
+      rgba(10, 12, 44, 0.8) 40%
+    ),
+    radial-gradient(
+      circle at 10% 73%,
+      rgba(63, 255, 104, 0.65) 8%,
+      rgba(7, 9, 35, 0.8) 50%
+    ),
+    linear-gradient(0deg, #070923, #070923);
+
+  --bg-color-green-hover: rgba(63, 255, 104, 0.1);
+
+  --border-color-green: rgba(63, 255, 104, 1);
+
+  --text-color-blue: rgba(0, 33, 164, 1);
+  --text-color-green: rgba(63, 255, 104, 1);
+  --text-color-bluelight: rgba(157, 245, 255, 1);
+  --text-color-whiteblue: rgba(251, 252, 255, 1);
+
+  --border-radius-20: 20px;
+  --border-radius-40: 40px;
+
+  --font-size-14: 14px;
+  --font-size-24: 24px;
+  --font-size-28: 28px;
+  --font-size-20: 20px;
+  --font-size-16: 16px;
+  --font-size-36: 36px;
+  --font-size-32: 32px;
+  --font-size-98: 98px;
+  --font-size-56: 56px;
+  --font-size-40: 40px;
+  --font-size-18: 18px;
+  --font-size-48: 48px;
+}
