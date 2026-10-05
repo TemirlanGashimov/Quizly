@@ -11,21 +11,37 @@ https://docs.djangoproject.com/en/6.1/ref/settings/
 """
 
 from pathlib import Path
+import os
+
+from django.core.exceptions import ImproperlyConfigured
+from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+load_dotenv(BASE_DIR / ".env")
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/6.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-dlv_0bvm*p0d&vw-o8(%cd9j@4*3)!x+(r&i=vd$763f4wsr)a'
+SECRET_KEY = os.getenv("DJANGO_SECRET_KEY")
+DEBUG = os.getenv("DJANGO_DEBUG", "true").lower() in {"1", "true", "yes"}
+if not SECRET_KEY:
+    if not DEBUG:
+        raise ImproperlyConfigured(
+            "DJANGO_SECRET_KEY must be set when DEBUG is disabled."
+        )
+    SECRET_KEY = "django-insecure-local-development-only"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    host.strip()
+    for host in os.getenv(
+        "DJANGO_ALLOWED_HOSTS", "localhost,127.0.0.1,testserver"
+    ).split(",")
+    if host.strip()
+]
 
 
 # Application definition
@@ -90,7 +106,9 @@ DATABASES = {
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME': (
+            'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'
+        ),
     },
     {
         'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
