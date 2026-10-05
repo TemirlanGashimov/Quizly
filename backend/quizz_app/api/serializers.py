@@ -18,3 +18,8 @@ class QuizSerializer(serializers.ModelSerializer):
         fields = [
             'id', 'title', 'description', 'created_at', 'updated_at', 'video_url', 'questions'
         ]
+
+
+class QuizCreateSerializer(serializers.Serializer):
+
+   url = serializers.URLField()
