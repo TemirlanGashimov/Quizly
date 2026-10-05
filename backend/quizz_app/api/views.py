@@ -6,7 +6,8 @@ from ..models import Quiz
 
 from auth_app.api.authentication import CookieJWTAuthentication
 
-from .serializers import QuizCreateSerializer, QuizSerializer
+from .permissions import IsQuizOwner
+from .serializers import QuizCreateSerializer, QuizSerializer, QuizCreateResponseSerializer
 from .services import create_quiz_from_url
 
 
@@ -34,9 +35,15 @@ class QuizListCreateView(generics.GenericAPIView):
             user=request.user
         )
 
-        response_serializer = QuizSerializer(quiz)
+        response_serializer = QuizCreateResponseSerializer(quiz)
 
         return Response(
             response_serializer.data,
             status=status.HTTP_201_CREATED
         )
+
+class QuizDetailView(generics.RetrieveUpdateDestroyAPIView):
+    authentication_classes = [CookieJWTAuthentication]
+    permission_classes = [IsAuthenticated, IsQuizOwner]
+    serializer_class = QuizSerializer
+    queryset = Quiz.objects.all()
