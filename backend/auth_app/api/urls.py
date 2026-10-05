@@ -1,3 +1,5 @@
+"""URL routes for registration and JWT cookie authentication."""
+
 from django.urls import path
 from .views import RegisterView, LoginView, LogoutView, TokenRefreshView
 
