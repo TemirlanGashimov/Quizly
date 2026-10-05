@@ -1,3 +1,5 @@
+"""URL routes for user-owned quiz API operations."""
+
 from django.urls import path
 
 from .views import QuizListCreateView, QuizDetailView
