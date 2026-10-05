@@ -35,13 +35,9 @@ if not SECRET_KEY:
     SECRET_KEY = "django-insecure-local-development-only"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-ALLOWED_HOSTS = [
-    host.strip()
-    for host in os.getenv(
-        "DJANGO_ALLOWED_HOSTS", "localhost,127.0.0.1,testserver"
-    ).split(",")
-    if host.strip()
-]
+DEBUG = True
+
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -106,9 +102,7 @@ DATABASES = {
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': (
-            'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'
-        ),
+        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
     },
     {
         'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
